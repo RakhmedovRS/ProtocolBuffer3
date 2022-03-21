@@ -1,0 +1,7 @@
+// The syntax for this file in proto3
+syntax = "proto3";
+
+message LatitudeLongitude {
+  float latitude = 1;
+  float longitude = 2;
+}
