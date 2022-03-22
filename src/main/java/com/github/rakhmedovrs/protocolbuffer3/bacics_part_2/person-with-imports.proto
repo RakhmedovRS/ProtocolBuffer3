@@ -1,0 +1,52 @@
+// The syntax for this file in proto3
+syntax = "proto3";
+
+import "com/github/rakhmedovrs/protocolbuffer3/bacics_part_2/date.proto";
+
+/*
+  Person is used to identify users
+ */
+message Person {
+  // the age as of the person's creation
+  int32 age = 1;
+
+  // the first name as documented in the signup form
+  string first_name = 2;
+
+  // the last name as documented in the signup form
+  string last_name = 3;
+
+  // represents a small .jpg file
+  bytes small_picture = 4;
+  bool is_profile_verified = 5;
+
+  // height in centimeters
+  float height = 6;
+
+  // optional list of provided phone numbers
+  repeated string phone_numbers = 7;
+
+  // only 3 eye colours supported
+  enum EyeColour {
+    UNKNOWN = 0;
+    GREEN = 1;
+    BROWN = 2;
+    BLUE = 3;
+  }
+
+  EyeColour eye_colour = 8;
+
+  // Person's birthday
+  Date birthdate = 9;
+
+  message Address {
+    string address_line_1 = 1;
+    string address_line_2 = 2;
+    string zip_code = 3;
+    string city = 4;
+    string country = 5;
+  }
+
+  // Person's addresses
+  repeated Address address = 10;
+}
