@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package com.github.rakhmedovrs.protocolbuffer3;
+
+message ComplexMessage {
+  DummyMessage single_dummy = 1;
+  repeated DummyMessage dummies = 2;
+}
+
+message DummyMessage {
+  int32 id = 1;
+  string name = 2;
+}
