@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package com.github.rakhmedovrs.protocolbuffer3.maps;
+
+message IdWrapper {
+  uint32 id = 1;
+}
+
+message MapExample{
+  map<string, IdWrapper> ids = 1;
+}
